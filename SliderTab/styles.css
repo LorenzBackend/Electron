@@ -1,0 +1,56 @@
+.Tabs {
+	position: relative;
+	background-color: #fff;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.Tabs:after {
+		content: ' ';
+		display: table;
+		clear: both;
+	}
+
+.description_tab {
+		float: left;
+		width: 33.333%;
+		text-align: center;
+	}
+
+.description_tab:first-child.active ~ .slider {
+			left: 0;
+		}
+
+.description_tab:nth-child(2).active ~ .slider {
+			left: 33.333%;
+		}
+
+.slider {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 33.333%;
+		height: 4px;
+		background-color: #4A66F4;
+		transition: left .25s;
+	}
+
+.Tab {
+	font-family: 'Roboto Slab';
+}
+
+.Tab > a {
+		display: block;
+		padding: 10px 12px;
+		text-decoration: none;
+		color: #666;
+		transition: color .15s;
+	}
+
+.Tab.active > a {
+			color: #222;
+		}
+.Tab:hover > a {
+			color: #222;
+		}

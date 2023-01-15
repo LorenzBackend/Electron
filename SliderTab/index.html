@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="styles.css">
+  <title>JS Bin</title>
+</head>
+<body>
+
+<ul class="Tabs" role="tablist">
+  <li class="description_tab active Tab" id="tab-title-description" role="tab" aria-controls="tab-description" onclick="openInfo(event, 'onlyfans')"> 
+    <a href="#onlyfans">OnlyFans</a>
+  </li>
+  <li class="description_tab Tab" id="tab-title-reviews" role="tab" aria-controls="tab-reviews" onclick="openInfo(event, 'twitter')">
+    <a href="#twitter">Twitter</a>
+  </li>
+<li class="slider" role="presentation"></li></ul>
+
+<div id="onlyfans" style="display: block;" class="tabcontent">
+    <h5>OnlyFans</h5>
+    <div class="a">
+        <p>Content</p>
+    </div>
+</div>
+<div id="twitter" style="display: none;" class="tabcontent">
+    <h5>Twitter</h5>
+    <div class="a">
+        <p>Content2</p>
+    </div>
+</div>
+
+<script>
+    var tabs = document.getElementsByClassName('Tab');
+
+Array.prototype.forEach.call(tabs, function(tab) {
+	tab.addEventListener('click', setActiveClass);
+});
+
+function setActiveClass(evt) {
+	Array.prototype.forEach.call(tabs, function(tab) {
+		tab.classList.remove('active');
+	});
+	
+	evt.currentTarget.classList.add('active');
+}
+
+function openInfo(evt, toolsName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");         
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(toolsName).style.display = "block";
+    evt.currentTarget.className += " active";                
+}
+  </script>
+</body>
+</html>

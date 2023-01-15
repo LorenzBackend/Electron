@@ -17,7 +17,7 @@
   <li class="description_tab Tab" id="tab-title-reviews" role="tab" aria-controls="tab-reviews" onclick="openInfo(event, 'twitter')">
     <a href="#twitter">Twitter</a>
   </li>
-<li class="slider" role="presentation"></li></ul>
+<li id="slider" class="slider" role="presentation"></li></ul>
 
 <div id="onlyfans" style="display: block;" class="tabcontent">
     <h5>OnlyFans</h5>
@@ -45,6 +45,7 @@ function setActiveClass(evt) {
 	});
 	
 	evt.currentTarget.classList.add('active');
+    console.log(evt.currentTarget);
 }
 
 function openInfo(evt, toolsName) {
